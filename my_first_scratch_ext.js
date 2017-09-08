@@ -21,5 +21,5 @@
     };
 
     // Register the extension
-    ScratchExtensions.register('My first extension', descriptor, ext);
+    ScratchExtensions.register('My first extension2', descriptor, ext);
 })({});
