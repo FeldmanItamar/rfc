@@ -16,10 +16,10 @@
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [' ', 'my first block', 'my_first_block'],
+            [' ', 'my first block2', 'my_first_block'],
         ]
     };
 
     // Register the extension
-    ScratchExtensions.register('My first extension2', descriptor, ext);
+    ScratchExtensions.register('My first extension', descriptor, ext);
 })({});
