@@ -1,3 +1,14 @@
+var DEBUG_NO_EV3 = false;
+var theEV3Device = theEV3Device || null;
+var EV3ScratchAlreadyLoaded = EV3ScratchAlreadyLoaded || false;
+var EV3Connected = EV3Connected || false;
+var potentialEV3Devices = potentialEV3Devices || [];
+var waitingForInitialConnection = waitingForInitialConnection || false;
+var potentialDevices = potentialDevices || []; // copy of the list
+var connecting = connecting || false;
+var connectionTimeout = connectionTimeout || null;
+
+
 (function(ext) {
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
