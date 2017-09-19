@@ -107,7 +107,7 @@ function(ext)
      // Block and block menu descriptions
      var descriptor = {
      blocks: [
-         
+         [' ', 'my first block3', 'my_first_block'],
               [" ", "set LED %m.patterns",                                 "setLED",                 "green"],
             
                     ],
