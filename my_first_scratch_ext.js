@@ -31,7 +31,7 @@ function receive_handler(data)
 
 function tryToConnect()
 {
-    console_log("Trying to connect..." + theArduinoBTDevice);
+    console_log("Trying to connect..." + theArduinoBTDevice.id);
     theArduinoBTDevice.open({ stopBits: 1, bitRate: 9600, ctsFlowControl: 0});
     theArduinoBTDevice.set_receive_handler(receive_handler);
     ArudinoBTconnect = true;
@@ -43,7 +43,7 @@ function tryNextDevice()
  
     var device = potentialDevices.shift();
     
-    console_log("tryNextDevice: " + device);
+    console_log("tryNextDevice: " + device.id);
 
     if (!device)
         return;
@@ -73,6 +73,8 @@ function tryNextDevice()
             
       if(test) { return; }
       if(!test) { test = true; }
+         
+      dev.listPairedDevices(console.log);
          
       console_log('_deviceConnected: ' + dev.id);
           
