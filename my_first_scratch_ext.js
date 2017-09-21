@@ -1,6 +1,7 @@
 var ArudinoBTconnect = ArudinoBTconnect || false;
 var theArduinoBTDevice = theArduinoBTDevice || null;
 var potentialDevices = [];
+var device = null;
 
 
 function timeStamp()
@@ -66,11 +67,13 @@ function tryNextDevice()
     
       ext._deviceConnected = function(dev) {
       
+      console_log('_deviceConnected: ' + dev.id);
+          
       if ((dev.id.indexOf('/dev/tty.serial') === 0)) {  potentialDevices.push(dev); }
 
-      if (!device) {
-        tryNextDevice();
-      }
+      //if (!device) {
+      //  tryNextDevice();
+      //}
           
      }
 
