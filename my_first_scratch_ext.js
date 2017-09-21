@@ -34,7 +34,7 @@ function tryToConnect()
     theArduinoBTDevice.set_receive_handler(receive_handler);
     ArudinoBTconnect = true;
 }
-
+ 
 function tryNextDevice()
 {
     potentialDevices.sort((function(a, b){return b.id.localeCompare(a.id)}));
