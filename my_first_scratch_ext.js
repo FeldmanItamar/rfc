@@ -74,8 +74,6 @@ function tryNextDevice()
       if(test) { return; }
       if(!test) { test = true; }
          
-      dev.listPairedDevices(console.log);
-         
       console_log('_deviceConnected: ' + dev.id);
           
       //if ((dev.id.indexOf('/dev/tty.serial') === 0)) {  }
