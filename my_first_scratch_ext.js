@@ -2,6 +2,12 @@ var ArudinoBTconnect = ArudinoBTconnect || false;
 var theArduinoBTDevice = theArduinoBTDevice || null;
 var potentialDevices = [];
 
+
+function timeStamp()
+{
+    return (new Date).toISOString().replace(/z|t/gi,' ').trim();
+}
+
 function console_log(str)
 {
     console.log(timeStamp() + ": "  + str);
