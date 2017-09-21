@@ -64,7 +64,7 @@ function tryNextDevice()
             return { status:2, msg:'Connected' };
      };
     
-    
+    console_log('_d2");
       ext._deviceConnected = function(dev) {
       
       console_log('_deviceConnected: ' + dev.id);
@@ -96,7 +96,7 @@ function tryNextDevice()
         ]
     };
 
-    console_log("test");
+    console_log("test2");
     
     var serial_info = {type: 'serial'};
     ScratchExtensions.register('Arduino BT extension', descriptor, ext, serial_info);
