@@ -31,15 +31,14 @@ function receive_handler(data)
 function tryToConnect()
 {
     console_log("Trying to connect..." + theArduinoBTDevice);
-    theArduinoBTDevice.open({ stopBits: 0, bitRate: 9600, ctsFlowControl: 0});
+    theArduinoBTDevice.open({ stopBits: 1, bitRate: 9600, ctsFlowControl: 0});
     theArduinoBTDevice.set_receive_handler(receive_handler);
     ArudinoBTconnect = true;
 }
  
 function tryNextDevice()
 {
-    potentialDevices.sort((function(a, b){return b.id.localeCompare(a.id)}));
-
+    
     var device = potentialDevices.shift();
     
     console_log("tryNextDevice: " + device);
