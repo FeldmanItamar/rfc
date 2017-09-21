@@ -64,7 +64,7 @@ function tryNextDevice()
             return { status:2, msg:'Connected' };
      };
     
-    console_log('_d2");
+    console_log('_d2');
       ext._deviceConnected = function(dev) {
       
       console_log('_deviceConnected: ' + dev.id);
