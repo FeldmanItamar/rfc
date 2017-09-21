@@ -1,5 +1,5 @@
 var ArudinoBTconnect = ArudinoBTconnect || false;
-var theArduinoBTDevice = theEV3Device || null;
+var theArduinoBTDevice = theArduinoBTDevice || null;
 var potentialDevices = [];
 
 function setLED() {
