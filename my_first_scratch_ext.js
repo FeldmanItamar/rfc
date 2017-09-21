@@ -1,16 +1,23 @@
+var EV3Connected = EV3Connected || false;
+
+
 (function(ext) {
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
     // Status reporting code
     // Use this to report missing hardware, plugin or unsupported browser
-    ext._getStatus = function() {
-        return {status: 2, msg: 'Ready'};
-    };
+    ext._getStatus = function()  {
+         if (!EV3Connected)
+            return { status:1, msg:'Disconnected' };
+         else
+            return { status:2, msg:'Connected' };
+     };
 
-    ext.my_first_block = function() {
-        // Code that gets executed when the block is run
-    };
+    ext.setLED = function()
+     {
+        setLED();
+     }
 
     // Block and block menu descriptions
     var descriptor = {
