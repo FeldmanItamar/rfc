@@ -33,7 +33,13 @@ function tryToConnect()
 {
     console_log("Trying to connect..." + theArduinoBTDevice.id);
     theArduinoBTDevice.open({ stopBits: 1, bitRate: 9600, ctsFlowControl: 0});
-    theArduinoBTDevice.set_receive_handler(receive_handler);
+    
+    theArduinoBTDevice.set_receive_handler(function(data) {
+        var inputData = new Uint8Array(data);
+        console_log(inputData);
+      });
+    
+    
     ArudinoBTconnect = true;
 }
  
