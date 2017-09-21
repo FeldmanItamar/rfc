@@ -66,16 +66,13 @@ function tryNextDevice()
     
    
      ext._deviceConnected = function(dev) { 
-      
-          console_log('_d2');
-         
+            
       console_log('_deviceConnected: ' + dev.id);
           
       if ((dev.id.indexOf('/dev/tty.serial') === 0)) {  potentialDevices.push(dev); }
 
-      //if (!device) {
-      //  tryNextDevice();
-      //}
+       tryNextDevice();
+     
           
      }
 
@@ -93,12 +90,10 @@ function tryNextDevice()
         blocks: [
             // Block type, block name, function name
             [" ", "set LED",                                 "setLED",                 "green"],
-            [" ", "unset LED",                               "unsetLED",                 "green"],
+            [" ", "unset LED",                               "unsetLED",               "green"],
               ]
     };
 
-    console_log("test2");
-    
     var serial_info = {type: 'serial'};
    ScratchExtensions.register('PicoBoard', descriptor, ext, {type: 'serial'});
 })({});
