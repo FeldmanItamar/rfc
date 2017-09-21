@@ -82,7 +82,7 @@ function tryNextDevice()
         ]
     };
 
-    console_log("'test");
+    console_log("test");
     
     var serial_info = {type: 'serial'};
     ScratchExtensions.register('Arduino BT extension', descriptor, ext, serial_info);
