@@ -64,9 +64,11 @@ function tryNextDevice()
             return { status:2, msg:'Connected' };
      };
     
-    console_log('_d2');
-      ext._deviceConnected = function(dev) {
+   
+     ext._deviceConnected = function(dev) { 
       
+          console_log('_d2');
+         
       console_log('_deviceConnected: ' + dev.id);
           
       if ((dev.id.indexOf('/dev/tty.serial') === 0)) {  potentialDevices.push(dev); }
@@ -92,12 +94,11 @@ function tryNextDevice()
             // Block type, block name, function name
             [" ", "set LED",                                 "setLED",                 "green"],
             [" ", "unset LED",                               "unsetLED",                 "green"],
-
-        ]
+              ]
     };
 
     console_log("test2");
     
     var serial_info = {type: 'serial'};
-    ScratchExtensions.register('Arduino BT extension', descriptor, ext, serial_info);
+   ScratchExtensions.register('PicoBoard', descriptor, ext, {type: 'serial'});
 })({});
