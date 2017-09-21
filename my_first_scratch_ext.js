@@ -77,9 +77,6 @@ function tryNextDevice()
    
      ext._deviceConnected = function(dev) { 
             
-      if(test) { return; }
-      if(!test) { test = true; }
-         
       console_log('_deviceConnected: ' + dev.id);
           
       //if ((dev.id.indexOf('/dev/tty.serial') === 0)) {  }
