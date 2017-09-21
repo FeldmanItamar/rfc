@@ -30,7 +30,7 @@ function receive_handler(data)
 
 function tryToConnect()
 {
-    console_log("Trying to connect...");
+    console_log("Trying to connect..." + theArduinoBTDevice);
     theArduinoBTDevice.open({ stopBits: 0, bitRate: 9600, ctsFlowControl: 0});
     theArduinoBTDevice.set_receive_handler(receive_handler);
     ArudinoBTconnect = true;
@@ -72,11 +72,11 @@ function tryNextDevice()
             
       console_log('_deviceConnected: ' + dev.id);
           
-      if ((dev.id.indexOf('/dev/tty.serial') === 0)) {  potentialDevices.push(dev); }
+      //if ((dev.id.indexOf('/dev/tty.serial') === 0)) {  }
+      
+      potentialDevices.push(dev); 
 
-       tryNextDevice();
-     
-          
+       tryNextDevice();    
      }
 
     ext.setLED = function()
