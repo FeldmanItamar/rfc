@@ -2,6 +2,11 @@ var ArudinoBTconnect = ArudinoBTconnect || false;
 var theArduinoBTDevice = theArduinoBTDevice || null;
 var potentialDevices = [];
 
+function console_log(str)
+{
+    console.log(timeStamp() + ": "  + str);
+}
+
 function setLED() {
 
     theArduinoBTDevice.send(1);
