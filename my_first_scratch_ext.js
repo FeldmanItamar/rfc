@@ -16,8 +16,12 @@
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [' ', 'my first block3', 'my_first_block'],
+            [" ", "set LED %m.patterns",                                 "setLED",                 "green"],
         ]
+         "menus": {
+
+     "patterns": ["off", "green", "red", "orange", "green flashing", "red flashing", "orange flashing", "green pulse", "red pulse", "orange pulse"],
+     },
     };
 
     // Register the extension
