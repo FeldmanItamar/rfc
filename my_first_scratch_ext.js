@@ -105,5 +105,5 @@ function tryNextDevice()
     };
 
     var serial_info = {type: 'serial'};
-   ScratchExtensions.register('PicoBoard', descriptor, ext, {type: 'serial'});
+   ScratchExtensions.register('Itamar1', descriptor, ext, {type: 'serial'});
 })({});
