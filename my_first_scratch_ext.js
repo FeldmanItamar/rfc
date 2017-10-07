@@ -40,15 +40,30 @@ function console_log(str)
     console.log(timeStamp() + ": "  + str);
 }
 
-function setLED() {
+function setLED11() {
 
     theArduinoBTDevice.send(packMessageForSending(1));
 }
-function unsetLED() {
+function setLED00() {
 
     theArduinoBTDevice.send(packMessageForSending(0));
 }
+function setLED1() {
 
+    theArduinoBTDevice.send(1);
+}
+function setLED0() {
+
+    theArduinoBTDevice.send(0);
+}
+function setLED1111() {
+
+    theArduinoBTDevice.send(111111111);
+}
+function setLED0000() {
+
+    theArduinoBTDevice.send(0000000000);
+}
 function tryToConnect()
 {
     console_log("Trying to connect..." + theArduinoBTDevice.id);
@@ -120,11 +135,15 @@ function tryNextDevice()
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [" ", "set LED",                                 "setLED",                 "green"],
-            [" ", "unset LED",                               "unsetLED",               "green"],
+            [" ", "set LED1",                                 "setLED0",                 "green"],
+            [" ", "unset LED1",                               "setLED1",               "green"],
+            [" ", "set LED2",                                 "setLED00",                 "green"],
+            [" ", "unset LED2",                               "setLED11",               "green"],
+            [" ", "set LED3",                                 "setLED0000",                 "green"],
+            [" ", "unset LED4",                               "setLED1111",               "green"],
               ]
     };
 
     var serial_info = {type: 'serial'};
-   ScratchExtensions.register('itamar7', descriptor, ext, {type: 'serial'});
+   ScratchExtensions.register('itamar8', descriptor, ext, {type: 'serial'});
 })({});
