@@ -67,7 +67,7 @@ function setLED0000() {
 function tryToConnect()
 {
     console_log("Trying to connect..." + theArduinoBTDevice.id);
-    theArduinoBTDevice.open({ stopBits: 1, bitRate: 9600, ctsFlowControl: 0});
+    theArduinoBTDevice.open({ stopBits: 0, bitRate: 57600, ctsFlowControl: 0});
     
     theArduinoBTDevice.set_receive_handler(function(data) {
         var inputData = new Uint8Array(data);
@@ -141,5 +141,5 @@ function tryNextDevice()
     };
 
     var serial_info = {type: 'serial'};
-   ScratchExtensions.register('itamar10', descriptor, ext, {type: 'serial'});
+   ScratchExtensions.register('itamar11', descriptor, ext, {type: 'serial'});
 })({});
