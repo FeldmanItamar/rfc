@@ -1410,8 +1410,9 @@ function(ext)
                 potentialEV3Devices.push(dev);
              //}
 
-             if (!deviceTimeout)
-                deviceTimeout = setTimeout(tryAllDevices, 1000);
+             //if (!deviceTimeout)
+             //   deviceTimeout = setTimeout(tryAllDevices, 1000);
+         tryAllDevices;
          //}
      };
 
@@ -1573,7 +1574,7 @@ function(ext)
  //  [' ', 'reconnect', 'reconnectToDevice'],
 
      var serial_info = {type: 'serial'};
-     ScratchExtensions.register('itamar2', descriptor, ext, serial_info);
+     ScratchExtensions.register('itamar3', descriptor, ext, serial_info);
      console_log(' registered extension. theEV3Device:' + theEV3Device);
 
      console_log("EV3ScratchAlreadyLoaded: " + EV3ScratchAlreadyLoaded);
