@@ -31,7 +31,7 @@ function tryToConnect()
     
     theArduinoBTDevice.set_receive_handler(function(data) {
         var inputData = new Uint8Array(data);
-        console_log(inputData);
+        console_log(data + "|" + inputData);
       });
     
     
@@ -74,7 +74,7 @@ function tryNextDevice()
             
       console_log('_deviceConnected: ' + dev.id);
           
-      if ((dev.id == 'COM4')) {  
+      if ((dev.id == 'COM3')) {  
         if(!ArudinoBTconnect) {    
           potentialDevices.push(dev); 
           tryNextDevice();  
@@ -101,5 +101,5 @@ function tryNextDevice()
     };
 
     var serial_info = {type: 'serial'};
-   ScratchExtensions.register('itamar4', descriptor, ext, {type: 'serial'});
+   ScratchExtensions.register('itamar5', descriptor, ext, {type: 'serial'});
 })({});
