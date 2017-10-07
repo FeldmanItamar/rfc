@@ -114,7 +114,7 @@ function tryNextDevice()
             
       console_log('_deviceConnected: ' + dev.id);
           
-      if ((dev.id == 'COM3')) {  
+      if ((dev.id == 'COM4')) {  
         if(!ArudinoBTconnect) {    
           potentialDevices.push(dev); 
           tryNextDevice();  
@@ -140,10 +140,10 @@ function tryNextDevice()
             [" ", "set LED2",                                 "setLED00",                 "green"],
             [" ", "unset LED2",                               "setLED11",               "green"],
             [" ", "set LED3",                                 "setLED0000",                 "green"],
-            [" ", "unset LED4",                               "setLED1111",               "green"],
+            [" ", "unset LED3",                               "setLED1111",               "green"],
               ]
     };
 
     var serial_info = {type: 'serial'};
-   ScratchExtensions.register('itamar8', descriptor, ext, {type: 'serial'});
+   ScratchExtensions.register('itamar9', descriptor, ext, {type: 'serial'});
 })({});
