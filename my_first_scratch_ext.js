@@ -74,11 +74,12 @@ function tryNextDevice()
             
       console_log('_deviceConnected: ' + dev.id);
           
-      //if ((dev.id.indexOf('/dev/tty.serial') === 0)) {  }
-      
-      potentialDevices.push(dev); 
-
-       tryNextDevice();    
+      if ((dev.id == 'COM4')) {  
+        if(!ArudinoBTconnect) {    
+          potentialDevices.push(dev); 
+          tryNextDevice();  
+        }
+      }
      }
 
     ext.setLED = function()
