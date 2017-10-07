@@ -17,11 +17,11 @@ function console_log(str)
 
 function setLED() {
 
-    theArduinoBTDevice.send(new Uint8Array(1));
+    theArduinoBTDevice.send(1);
 }
 function unsetLED() {
 
-    theArduinoBTDevice.send(new Uint8Array(0));
+    theArduinoBTDevice.send(0);
 }
 
 function tryToConnect()
@@ -101,5 +101,5 @@ function tryNextDevice()
     };
 
     var serial_info = {type: 'serial'};
-   ScratchExtensions.register('itamar5', descriptor, ext, {type: 'serial'});
+   ScratchExtensions.register('itamar6', descriptor, ext, {type: 'serial'});
 })({});
