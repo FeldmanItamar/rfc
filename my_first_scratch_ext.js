@@ -3,7 +3,32 @@ var theArduinoBTDevice = theArduinoBTDevice || null;
 var potentialDevices = [];
 var device = null;
 var test = test || false;
+var counter = counter || 0;
 
+function packMessageForSending(str)
+{
+    var length = ((str.length / 2) + 2);
+
+    var a = new ArrayBuffer(4);
+    var c = new Uint16Array(a);
+    var arr = new Uint8Array(a);
+    c[1] = counter;
+    c[0] = length;
+    counter++;
+    var mess = new Uint8Array((str.length / 2) + 4);
+
+    for (var i = 0; i < 4; i ++)
+    {
+        mess[i] = arr[i];
+    }
+
+    for (var i = 0; i < str.length; i += 2)
+    {
+        mess[(i / 2) + 4] = parseInt(str.substr(i, 2), 16);
+    }
+
+    return mess;
+}
 
 function timeStamp()
 {
@@ -17,11 +42,11 @@ function console_log(str)
 
 function setLED() {
 
-    theArduinoBTDevice.send(1);
+    theArduinoBTDevice.send(packMessageForSending(1));
 }
 function unsetLED() {
 
-    theArduinoBTDevice.send(0);
+    theArduinoBTDevice.send(packMessageForSending(0));
 }
 
 function tryToConnect()
@@ -101,5 +126,5 @@ function tryNextDevice()
     };
 
     var serial_info = {type: 'serial'};
-   ScratchExtensions.register('itamar6', descriptor, ext, {type: 'serial'});
+   ScratchExtensions.register('itamar7', descriptor, ext, {type: 'serial'});
 })({});
