@@ -67,12 +67,12 @@ function setLED0000() {
 function tryToConnect()
 {
     console_log("Trying to connect..." + theArduinoBTDevice.id);
-    theArduinoBTDevice.open({ stopBits: 0, bitRate: 57600, ctsFlowControl: 0});
-    
+    theArduinoBTDevice.open({ stopBits: 1, bitRate: 9600, ctsFlowControl: 0});
+    ArudinoBTconnect = true;
     theArduinoBTDevice.set_receive_handler(function(data) {
         var inputData = new Uint8Array(data);
         console_log(data + "|" + inputData);
-        ArudinoBTconnect = true;
+        
       });
 }
  
@@ -111,11 +111,13 @@ function tryNextDevice()
      ext._deviceConnected = function(dev) { 
             
       console_log('_deviceConnected: ' + dev.id);
-          
+       
+       if ((dev.id == 'COM4') {
         if(!ArudinoBTconnect) {    
           potentialDevices.push(dev); 
           tryNextDevice();  
         }
+       }
      }
 
     ext.setLED = function()
@@ -141,5 +143,5 @@ function tryNextDevice()
     };
 
     var serial_info = {type: 'serial'};
-   ScratchExtensions.register('itamar11', descriptor, ext, {type: 'serial'});
+   ScratchExtensions.register('itamar12', descriptor, ext, {type: 'serial'});
 })({});
