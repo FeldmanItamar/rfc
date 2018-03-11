@@ -31,7 +31,7 @@
     device.send('a');
        console_log('tryNextDevice7: ' + device.id);
    
-   if (device.id == 'COM8') connected = true;
+   //if (device.id == 'COM8') connected = true;
   }
  
  function timeStamp()
@@ -95,5 +95,5 @@ ext.test = function() {
     blocks: blocks,
   };
 
-  ScratchExtensions.register('test9', descriptor, ext, {type: 'serial'});
+  ScratchExtensions.register('test10', descriptor, ext, {type: 'serial'});
 })({});
