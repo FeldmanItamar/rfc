@@ -132,6 +132,16 @@
  //   }, 5000);
  //   
   }
+ 
+ function timeStamp()
+{
+    return (new Date).toISOString().replace(/z|t/gi,' ').trim();
+}
+
+function console_log(str)
+{
+    console.log(timeStamp() + ": "  + str);
+}
 
   function pingDevice() {
     device.send('a');
@@ -334,5 +344,5 @@ ext.test = function() {
     menus: menus,
   };
 
-  ScratchExtensions.register('test1', descriptor, ext, {type: 'serial'});
+  ScratchExtensions.register('test2', descriptor, ext, {type: 'serial'});
 })({});
