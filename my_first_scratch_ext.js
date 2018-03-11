@@ -112,7 +112,7 @@ function tryNextDevice()
             
       console_log('_deviceConnected: ' + dev.id);
        
-       if ((dev.id == 'COM4')) {
+       if ((dev.id == 'COM7')) {
         if(!ArudinoBTconnect) {    
           potentialDevices.push(dev); 
           tryNextDevice();  
