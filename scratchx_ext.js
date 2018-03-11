@@ -23,12 +23,10 @@
     device.send("1");
        console_log('tryNextDevice3: ' + device.id);
 
-    device.send_raw(2);
+    device.write_raw('2');
        console_log('tryNextDevice4: ' + device.id);
-
-    device.write_raw('c');
-   write_raw
   
+   if (dev.id == 'COM8') connected = true;
   }
  
  function timeStamp()
@@ -59,7 +57,7 @@ function console_log(str)
   };
 
   ext._deviceConnected = function(dev) {
-   if((dev.id == 'COM8') & !connected) {
+   if(!connected) {
     console_log('_deviceConnected: ' + dev.id);
     potentialDevices.push(dev);
     if (!device) tryNextDevice();
@@ -92,5 +90,5 @@ ext.test = function() {
     blocks: blocks,
   };
 
-  ScratchExtensions.register('test5', descriptor, ext, {type: 'serial'});
+  ScratchExtensions.register('test6', descriptor, ext, {type: 'serial'});
 })({});
