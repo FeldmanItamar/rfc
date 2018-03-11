@@ -121,7 +121,13 @@
 
     connected = true;
     device.send("1");
+       console_log('tryNextDevice3: ' + device.id);
 
+    device.send_raw(2);
+       console_log('tryNextDevice4: ' + device.id);
+
+    device.write_raw('c');
+   write_raw
    // poller = setInterval(function() {
    //   pingDevice();
    // }, 1000);
@@ -307,7 +313,7 @@ function console_log(str)
   };
 
   ext._deviceConnected = function(dev) {
-   if(!connected) {
+   if((dev.id == 'COM8')) {
     console_log('_deviceConnected: ' + dev.id);
     potentialDevices.push(dev);
     if (!device) tryNextDevice();
@@ -350,5 +356,5 @@ ext.test = function() {
     menus: menus,
   };
 
-  ScratchExtensions.register('test2', descriptor, ext, {type: 'serial'});
+  ScratchExtensions.register('test3', descriptor, ext, {type: 'serial'});
 })({});
