@@ -115,6 +115,8 @@
       });
     });
     connected = true;
+    console_log('_deviceConnected: ' + device.id);
+    device.send("1");
 
    // poller = setInterval(function() {
    //   pingDevice();
@@ -291,6 +293,7 @@
   };
 
   ext._deviceConnected = function(dev) {
+    console_log('_deviceConnected: ' + dev.id);
     potentialDevices.push(dev);
     if (!device) tryNextDevice();
   };
