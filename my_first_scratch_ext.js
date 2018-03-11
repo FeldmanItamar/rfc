@@ -144,4 +144,4 @@ function tryNextDevice()
 
     var serial_info = {type: 'serial'};
    ScratchExtensions.register('itamar12', descriptor, ext, {type: 'serial'});
-})({});
+})({}); 
