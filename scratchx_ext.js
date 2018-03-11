@@ -108,14 +108,18 @@
 
   function tryNextDevice() {
     device = potentialDevices.shift();
+       console_log('tryNextDevice1: ' + device.id);
+
     if (!device) return;
     device.open({stopBits: 0, bitRate: 57600, ctsFlowControl: 0}, function() {
       device.set_receive_handler(function(data) {
         //processInput(new Uint8Array(data));
       });
     });
+   
+    console_log('tryNextDevice2: ' + device.id);
+
     connected = true;
-    console_log('_deviceConnected: ' + device.id);
     device.send("1");
 
    // poller = setInterval(function() {
@@ -303,9 +307,11 @@ function console_log(str)
   };
 
   ext._deviceConnected = function(dev) {
+   if(!connected) {
     console_log('_deviceConnected: ' + dev.id);
     potentialDevices.push(dev);
     if (!device) tryNextDevice();
+   }
   };
 
   ext._deviceRemoved = function(dev) {
