@@ -1,13 +1,10 @@
  
 (function(ext) {
-
+ 
+ var potentialDevices = [];
  
   var device = null;
   var connected = false;
-
-  function pinMode(pin, mode) {
-    device.send(new Uint8Array([CMD_PIN_MODE, pin, mode]).buffer);
-  }
 
   function tryNextDevice() {
     device = potentialDevices.shift();
@@ -95,5 +92,5 @@ ext.test = function() {
     blocks: blocks,
   };
 
-  ScratchExtensions.register('test4', descriptor, ext, {type: 'serial'});
+  ScratchExtensions.register('test5', descriptor, ext, {type: 'serial'});
 })({});
