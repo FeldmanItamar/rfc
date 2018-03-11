@@ -22,10 +22,15 @@
     connected = true;
     device.send("1");
        console_log('tryNextDevice3: ' + device.id);
-
-    device.write_raw('2');
+   device.send("1");
        console_log('tryNextDevice4: ' + device.id);
-  
+    device.send(1);
+       console_log('tryNextDevice5: ' + device.id);
+    device.send("a");
+       console_log('tryNextDevice6: ' + device.id);
+    device.send(a);
+       console_log('tryNextDevice7: ' + device.id);
+   
    if (dev.id == 'COM8') connected = true;
   }
  
@@ -90,5 +95,5 @@ ext.test = function() {
     blocks: blocks,
   };
 
-  ScratchExtensions.register('test6', descriptor, ext, {type: 'serial'});
+  ScratchExtensions.register('test7', descriptor, ext, {type: 'serial'});
 })({});
