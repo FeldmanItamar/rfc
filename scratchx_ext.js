@@ -64,7 +64,7 @@ function console_log(str)
    if(!connected) {
     console_log('_deviceConnected: ' + dev.id);
     potentialDevices.push(dev);
-    if (!device) tryNextDevice();
+    tryNextDevice();
    }
   };
 
@@ -94,5 +94,5 @@ ext.test = function() {
     blocks: blocks,
   };
 
-  ScratchExtensions.register('test11', descriptor, ext, {type: 'serial'});
+  ScratchExtensions.register('test12', descriptor, ext, {type: 'serial'});
 })({});
