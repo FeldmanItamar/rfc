@@ -59,7 +59,12 @@ function console_log(str)
     else if (val == 'off')
       digitalWrite(pin, LOW);
   };
-
+ 
+  ext._getStatus = function() {
+    if (connected) return {status: 2, msg: 'Arduino connected'};
+    else return {status: 1, msg: 'Arduino disconnected'};
+  };
+ 
   ext._deviceConnected = function(dev) {
    if(!connected) {
     console_log('_deviceConnected: ' + dev.id);
@@ -94,5 +99,5 @@ ext.test = function() {
     blocks: blocks,
   };
 
-  ScratchExtensions.register('test12', descriptor, ext, {type: 'serial'});
+  ScratchExtensions.register('test13', descriptor, ext, {type: 'serial'});
 })({});
