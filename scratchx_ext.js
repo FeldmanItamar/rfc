@@ -99,5 +99,5 @@ ext.test = function() {
     blocks: blocks,
   };
 
-  ScratchExtensions.register('test13', descriptor, ext, {type: 'serial'});
+  ScratchExtensions.register('test13', descriptor, ext, {type: 'ble'});
 })({});
