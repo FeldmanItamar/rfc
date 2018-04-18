@@ -57,7 +57,20 @@
             window.socket.send(msg);
         }
     };
-		
+	ext.move_on_time = function (steering, time, power) {
+        if (connected == false) {
+            alert("Server Not Connected");
+        }
+        else {
+            var msg = JSON.stringify({
+                //"command": 'sending msg', 'Message': msg
+		    steering-100,time,power
+            });
+           // if (debugLevel)
+                console.log(msg);
+            window.socket.send(msg);
+        }
+    };	
 		
 	
     // Cleanup function when the extension is unloaded
