@@ -3,7 +3,7 @@
  */
 (function(ext) {
 	
-	var debugLevel = 0;
+    var debugLevel = 0;
 
     //var device = null;
     var socket = null;
@@ -16,7 +16,7 @@
 	
 	ext.connectwb = function () {
         //if(debugLevel)
-            console.log('Connecting to Server');
+        console.log('Connecting to Server');
         window.socket = new WebSocket("ws://localhost:5001");
         window.socket.onopen = function () {
             var msg = JSON.stringify({
@@ -30,10 +30,10 @@
             connected = true;
         };
 		
-		 window.socket.onmessage = function (message) {
-		 };
+	window.socket.onmessage = function (message) {
+	};
 		 
-		 //noinspection JSUnusedLocalSymbols
+	//noinspection JSUnusedLocalSymbols
         window.socket.onclose = function (e) {
             console.log("Connection closed.");
             socket = null;
@@ -42,7 +42,6 @@
             myMsg = 'not_ready'
         };
 	}
-	
 	
 	ext.sendMsg = function (msg) {
         if (connected == false) {
@@ -80,7 +79,7 @@
         blocks: [
 		 // Block type, block name, function name
             [' ', 'Connect to websocket', 'connectwb'],
-			[' ', 'send Message  %s', 'sendMsg', 'A50100320FD0FFA0'],
+            [' ', 'MOVE_ON_SEC steering %n time %n power %n (se', 'move', '0', '10', '50'],
 
         ],
     };
