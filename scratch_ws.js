@@ -64,7 +64,7 @@
         else {
             var msg = JSON.stringify({
                 //"command": 'sending msg', 'Message': msg
-		    steering-100,time,power
+		    steering time power
             });
            // if (debugLevel)
                 console.log(msg);
