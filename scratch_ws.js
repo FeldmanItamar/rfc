@@ -50,7 +50,8 @@
         }
         else {
             var msg = JSON.stringify({
-                "command": 'sending msg', 'Message': msg
+                //"command": 'sending msg', 'Message': msg
+		    msg
             });
            // if (debugLevel)
                 console.log(msg);
