@@ -10,7 +10,7 @@
 
     var connected = false;
 	
-	var myStatus = 1; // initially yellow
+    var myStatus = 1; // initially yellow
     var myMsg = 'not_ready';
 	
 	
@@ -20,7 +20,7 @@
         window.socket = new WebSocket("ws://localhost:5001");
         window.socket.onopen = function () {
             var msg = JSON.stringify({
-                "command": "ready"
+               // "command": "ready"
             });
             window.socket.send(msg);
             //if(debugLevel)
@@ -80,7 +80,7 @@
         blocks: [
 		 // Block type, block name, function name
             [' ', 'Connect to websocket', 'connectwb'],
-			[' ', 'send Message  %s', 'sendMsg', 'hi'],
+			[' ', 'send Message  %s', 'sendMsg', 'A50100320FD0FFA0'],
 
         ],
     };
