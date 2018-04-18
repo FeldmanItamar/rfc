@@ -79,7 +79,7 @@
         blocks: [
 		 // Block type, block name, function name
             [' ', 'Connect to websocket', 'connectwb'],
-            [' ', 'MOVE_ON_SEC steering %n time %n power %n (se', 'move', '0', '10', '50'],
+            [' ', 'MOVE_ON_TIME steering %n time %n power %n', 'move_on_time' , '0', '10', '50'],
 
         ],
     };
