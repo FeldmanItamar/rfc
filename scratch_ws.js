@@ -64,7 +64,7 @@
         else {
             var msg = JSON.stringify({
                 //"command": 'sending msg', 'Message': msg
-		    steering time power
+		    steering, time, power
             });
            // if (debugLevel)
                 console.log(msg);
@@ -92,7 +92,7 @@
         blocks: [
 		 // Block type, block name, function name
             [' ', 'Connect to websocket', 'connectwb'],
-            [' ', 'MOVE_ON_TIME steering %n time %n power %n', 'move_on_time' , '0', '10', '50'],
+            [' ', 'MOVE_ON_TIME steering %s time %s power %s', 'move_on_time' , '0', '10', '50'],
 
         ],
     };
