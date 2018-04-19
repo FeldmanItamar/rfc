@@ -57,7 +57,7 @@
             window.socket.send(msg);
         }
     };
-	ext.move_on_time = function (steering, time, power) {
+	ext.move_fwd_time = function (steering, time, power) {
         if (connected == false) {
             alert("Server Not Connected");
         }
@@ -71,7 +71,20 @@
             window.socket.send(msg);
         }
     };	
-		
+	ext.move_fwd_deg = function (steering, deg, power) {
+        if (connected == false) {
+            alert("Server Not Connected");
+        }
+        else {
+            var msg = JSON.stringify({
+                //"command": 'sending msg', 'Message': msg
+		    steering, deg, power
+            });
+           // if (debugLevel)
+                console.log(msg);
+            window.socket.send(msg);
+        }
+    };	
 	
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
@@ -92,7 +105,8 @@
         blocks: [
 		 // Block type, block name, function name
             [' ', 'Connect to websocket', 'connectwb'],
-            [' ', 'MOVE_ON_TIME steering %s time %s power %s', 'move_on_time' , '0', '10', '50'],
+            [' ', 'MOVE_FWD_TIME steering %s time %s power %s', 'move_fwd_time' , '0', '10', '50'],
+            [' ', 'MOVE_FWD_DEG steering %s deg %s power %s', 'move_fwd_deg' , '0', '360', '50'],
 
         ],
     };
