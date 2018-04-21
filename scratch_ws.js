@@ -105,8 +105,8 @@
         blocks: [
 		 // Block type, block name, function name
             [' ', 'Connect to websocket', 'connectwb'],
-            [' ', 'MOVE_TIME steering %n time %n power %n', 'move_fwd_time' , '50', '10', '50'],
-            [' ', 'MOVE_DEG steering %n deg %n power %n', 'move_fwd_deg' , '50', '360', '50'],
+            [' ', 'MOVE_TIME steering %n time %n power %n', 'move_fwd_time' , '50', '1000', '2000'],
+            [' ', 'MOVE_DEG steering %n deg %n power %n', 'move_fwd_deg' , '50', '360', '2000'],
 
         ],
     };
